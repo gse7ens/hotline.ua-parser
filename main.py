@@ -4,8 +4,6 @@ import csv
 
 
 CSV = "disks.csv"
-# https://hotline.ua/ua/computer/zhestkie-diski/941-945-9517-31348-602322/?mode=series
-# https://hotline.ua/ua/computer/zhestkie-diski/941-9517-31348-602322-639535/?mode=series
 urls = [
     "https://hotline.ua/ua/computer-zhestkie-diski/wd-red-plus-series/",  # WD Red Plus
     "https://hotline.ua/ua/computer-zhestkie-diski/seagate-ironwolf-series/",  # Seagate IronWolf
@@ -55,11 +53,6 @@ def get_content(html):
     return disks
 
 
-# html = get_html(URL00)
-# print(html.text)
-# print(get_content(html.text))
-
-
 def save_doc(items, path):
     with open(path, "w", newline="") as file:
         writer = csv.writer(file, delimiter=";")
@@ -74,50 +67,4 @@ for url in urls:
     html = get_html(url)
     disks.extend(get_content(html.text))
 
-# print("Parsing URL01")
-# html = get_html(URL01)
-# disks.extend(get_content(html.text))
-# print("Parsing URL02")
-# html = get_html(URL02)
-# disks.extend(get_content(html.text))
-# print("Parsing URL03")
-# html = get_html(URL03)
-# disks.extend(get_content(html.text))
-# print("Parsing URL04")
-# html = get_html(URL04)
-# disks.extend(get_content(html.text))
-# print("Parsing URL05")
-# html = get_html(URL05)
-# disks.extend(get_content(html.text))
-# print("Parsing URL06")
-# html = get_html(URL06)
-# disks.extend(get_content(html.text))
-# print("Parsing URL07")
-# html = get_html(URL07)
-# disks.extend(get_content(html.text))
-# print("Parsing URL08")
-# html = get_html(URL08)
-# disks.extend(get_content(html.text))
-# print("Parsing URL09")
-# html = get_html(URL09)
-# disks.extend(get_content(html.text))
-# print("Parsing URL10")
-# html = get_html(URL10)
-# disks.extend(get_content(html.text))
-# print("Parsing URL11")
-# html = get_html(URL11)
-# disks.extend(get_content(html.text))
-# print("Parsing URL12")
-# html = get_html(URL12)
-# disks.extend(get_content(html.text))
-# print("Parsing URL13")
-# html = get_html(URL13)
-# disks.extend(get_content(html.text))
-# print("Parsing URL14")
-# html = get_html(URL14)
-# disks.extend(get_content(html.text))
-# print("Parsing URL15")
-# html = get_html(URL15)
-# disks.extend(get_content(html.text))
-# print("Saving doc...")
 save_doc(disks, CSV)
